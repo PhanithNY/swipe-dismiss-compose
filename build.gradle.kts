@@ -59,6 +59,14 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
+                pom {
+                    licenses {
+                        license {
+                            name.set("MIT")
+                            url.set("https://opensource.org/license/mit")
+                        }
+                    }
+                }
             }
         }
     }
